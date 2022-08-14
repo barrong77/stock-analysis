@@ -1,0 +1,222 @@
+Sub VBA_Challenge()
+    Dim startTime As Single
+    Dim endTime  As Single
+
+    yearValue = InputBox("What year would you like to run the analysis on?")
+
+    startTime = Timer
+    
+    'Format the output sheet on All Stocks Analysis worksheet
+    Worksheets("Analysis").Activate
+    
+    Range("A1").Value = "All Stocks (" + yearValue + ")"
+    
+    'Create a header row
+    Cells(3, 1).Value = "Ticker"
+    Cells(3, 2).Value = "Total Daily Volume"
+    Cells(3, 3).Value = "Return"
+
+    'Initialize array of all tickers
+    Dim tickers(12) As String
+    
+    tickers(0) = "AY"
+    tickers(1) = "CSIQ"
+    tickers(2) = "DQ"
+    tickers(3) = "ENPH"
+    tickers(4) = "FSLR"
+    tickers(5) = "HASI"
+    tickers(6) = "JKS"
+    tickers(7) = "RUN"
+    tickers(8) = "SEDG"
+    tickers(9) = "SPWR"
+    tickers(10) = "TERP"
+    tickers(11) = "VSLR"
+    
+    'Initialize variables for starting price and ending price
+    
+    Dim startingPrice As Single
+    Dim endingPrice As Single
+    
+    'Activate data worksheet
+    
+    Worksheets("2018").Activate
+    
+    'Get the number of rows to loop over
+    rowStart = 2
+    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+   
+    
+    '1a) Create a ticker Index
+    'Loop through tickers
+    
+    For i = 0 To 11
+    
+    ticker = tickers(i)
+    tickerIndex = tickers(i)
+    totalVolume = 0
+   
+    'loop through rows in the data
+    
+    Worksheets("2018").Activate
+    'set initial volume to zero
+    totalVolume = 0
+    
+    
+        'Increase volume for current ticker
+        'Check if the current row is the first row with the selected tickerIndex.
+        'check if the current row is the last row with the selected ticker
+         'If the next row ticker doesnt match, increase the tickerIndex.
+       'Increase the tickerIndex.
+       
+       
+   If Cells(i, 1).Value = tickerIndex Then
+   tickerVolumes = tickerVolumes + Cells(i, 8).Value
+   
+   End If
+    
+    
+    
+    Worksheets("2018").Activate
+    
+    For j = 2 To RowEnd
+    
+    'Get the total volume for current ticker
+    
+    If Cells(j, 1).Value = ticker Then
+    
+    totalVolume = totalVolume + Cells(j, 8).Value
+    
+   End If
+    
+    'Get starting price for current ticker
+    
+    If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
+    
+    startingPrice = Cells(j, 6).Value
+    
+    End If
+    
+    'Get ending price for current ticker
+    
+    If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
+    
+    endingPrice = Cells(j, 6).Value
+    
+    End If
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    If Cells(i, 1).Value = "AY" Then
+    If Cells(i, 1).Value = "CSIQ" Then
+    If Cells(i, 1).Value = "DQ" Then
+    If Cells(i, 1).Value = "ENPH" Then
+    If Cells(i, 1).Value = "FSLR" Then
+    If Cells(i, 1).Value = "HASI" Then
+    If Cells(i, 1).Value = "JKS" Then
+    If Cells(i, 1).Value = "RUN" Then
+    If Cells(i, 1).Value = "SEDG" Then
+    If Cells(i, 1).Value = "SPWR" Then
+    If Cells(i, 1).Value = "TERP" Then
+    If Cells(i, 1).Value = "VSLR" Then
+    
+    
+    'increase totalVolume by the value in the current row
+    totalVolume = totalVolume + Cells(i, 8).Value
+    
+    
+    End If
+    
+    If Cells(i - 1, 1).Value <> "AY" And Cells(i, 1).Value = "AY" Then
+    If Cells(i - 1, 1).Value <> "CSIQ" And Cells(i, 1).Value = "CSIQ" Then
+    If Cells(i - 1, 1).Value <> "DQ" And Cells(i, 1).Value = "DQ" Then
+    If Cells(i - 1, 1).Value <> "ENPH" And Cells(i, 1).Value = "ENPH" Then
+    If Cells(i - 1, 1).Value <> "FSLR" And Cells(i, 1).Value = "FSLR" Then
+    If Cells(i - 1, 1).Value <> "HASI" And Cells(i, 1).Value = "HASI" Then
+    If Cells(i - 1, 1).Value <> "JKS" And Cells(i, 1).Value = "JKS" Then
+    If Cells(i - 1, 1).Value <> "RUN" And Cells(i, 1).Value = "RUN" Then
+    If Cells(i - 1, 1).Value <> "SEDG" And Cells(i, 1).Value = "SEDG" Then
+    If Cells(i - 1, 1).Value <> "SPWR" And Cells(i, 1).Value = "SPWR" Then
+    If Cells(i - 1, 1).Value <> "TERP" And Cells(i, 1).Value = "TERP" Then
+    If Cells(i - 1, 1).Value <> "VSLR" And Cells(i, 1).Value = "VSLR" Then
+    
+    startingPrice = Cells(i, 6).Value
+    
+    End If
+    
+    If Cells(i + 1, 1).Value <> "AY" And Cells(i, 1).Value = "AY" Then
+    If Cells(i + 1, 1).Value <> "CSIQ" And Cells(i, 1).Value = "CSIQ" Then
+    If Cells(i + 1, 1).Value <> "DQ" And Cells(i, 1).Value = "DQ" Then
+    If Cells(i + 1, 1).Value <> "ENPH" And Cells(i, 1).Value = "ENPH" Then
+    If Cells(i + 1, 1).Value <> "FSLR" And Cells(i, 1).Value = "FSLR" Then
+    If Cells(i + 1, 1).Value <> "HASI" And Cells(i, 1).Value = "HASI" Then
+    If Cells(i + 1, 1).Value <> "JKS" And Cells(i, 1).Value = "JKS" Then
+    If Cells(i + 1, 1).Value <> "RUN" And Cells(i, 1).Value = "RUN" Then
+    If Cells(i + 1, 1).Value <> "SEDG" And Cells(i, 1).Value = "SEDG" Then
+    If Cells(i + 1, 1).Value <> "SPWR" And Cells(i, 1).Value = "SPWR" Then
+    If Cells(i + 1, 1).Value <> "TERP" And Cells(i, 1).Value = "TERP" Then
+    If Cells(i + 1, 1).Value <> "VSLR" And Cells(i, 1).Value = "VSLR" Then
+    
+    endingPrice = Cells(i, 6).Value
+    
+    End If
+    
+    
+    
+    
+    
+   
+    
+    
+    'Output data for current ticker
+    
+    Worksheets("Analysis").Activate
+    
+    Cells(4 + i, 1).Value = ticker
+    Cells(4 + i, 2).Value = totalVolume
+    Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
+    
+   
+   
+End Sub
+Sub Formatting()
+    
+    'Formatting
+    
+    Range("A3:C3").Font.FontStyle = "Bold"
+    Range("A3:C3").Borders(xlEdgeBottom).LineStyle = xlContinuous
+    Range("B4:B15").NumberFormat = "#,##0"
+    Range("C4:C15").NumberFormat = "0.0%"
+    Columns("B").AutoFit
+
+    dataRowStart = 4
+    dataRowEnd = 15
+
+    For i = dataRowStart To dataRowEnd
+        
+        If Cells(i, 3) > 0 Then
+            
+            Cells(i, 3).Interior.Color = vbGreen
+            
+        Else
+        
+            Cells(i, 3).Interior.Color = vbRed
+            
+        End If
+        
+    Next i
+ 
+    endTime = Timer
+    MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
+
+End Sub
