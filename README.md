@@ -1,5 +1,5 @@
 # stock-analysis
-Written Analysis of Results - Please reference document "Analysis of Deliverable" for summary, pictures and tables.
+****Written Analysis of Results - Please reference document "Analysis of Deliverable" for summary, pictures and tables.****
 
 Purpose of Analysis:
 
