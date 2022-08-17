@@ -1,5 +1,6 @@
 # stock-analysis
 ****Written Analysis of Results - Please reference document "Analysis of Deliverable" for summary, pictures and tables.****
+I was able to get the button (macro) to work properly and its located in tab "Analysis A".  
 
 Purpose of Analysis:
 
