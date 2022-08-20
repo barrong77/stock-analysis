@@ -4,8 +4,8 @@ I was able to get the button (macro) to work properly and its located in tab "An
 
 Purpose of Analysis:
 
-The purpose of the analysis is for me to learn and get familiar with VBA coding.  In the exercise, the purpose is the provide a useful dataset
-to help analyse the entire stock market over multiple years.  Finally, the purpose of the project is to frustrate me to the point I rather
+The purpose of the analysis is to refractor in VBA and for me to learn and get familiar with VBA coding.  In the exercise, the purpose is the provide a useful dataset
+to help analyse the entire stock market over multiple years and determine which stocks to invest in.  Finally, the purpose of the project is to frustrate me to the point I rather
 hang a shower curtain.  
 
 Results:
@@ -67,11 +67,11 @@ Table above, there are headers, bold is enabled, line style is present, headers 
    'Increase the tickerIndex.
 7. The output of the 2017 and 2018 tables match the module.  See referenced tables above.
 8. The pop-up messages show elapsed run time:
-The Run Time was relatively the same for both VBAs to run.  
+The Run Time was relatively the same for both VBAs to run.  The run time was faster when refactoring.  
 
 
  
 
 Summary
-The advantages of refactoring code in general are it allowed me to capture more data for the analysis.  The disadvantages are that to create the code was more complicated and time consuming.
+The advantages of refactoring code in general are it allowed me to capture more data for the analysis.  The disadvantages are that to create the code was more complicated and time consuming.  
 The advantages and disadvantages of the original and refactored VBA script is that the original script was focused on one ticker DQ versus the challenge script that encompased all tickers.  To process the challenge script was time consuming, had more steps, overall was pretty tough.  The original script had less code to process and was less confusing.  Overall, I learned alot from the course and purchased a VBA book at Barnes and Nobels.  I actually like that coding and want to understand it more.  Half of me wishes we could just focus on VBA for the data analytics course.
